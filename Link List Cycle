@@ -1,0 +1,29 @@
+// LEET CODE question 
+//The range of the number of nodes is 0 - 10000 and we have to determine whether there is a cycle in the given link list.
+// If a cycle is present in it then return TRUE otherwise return FALSE.
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        int i=0;
+        while(head!=NULL){
+            if(i==10000){
+                return true;
+            }
+            else{
+                head=head->next;
+                i++;
+            }
+        }
+        return false;
+    }
+};
