@@ -1,0 +1,43 @@
+//Implementation of stack using Linked List 
+// Structure , function and pointers are used.
+#include<stdio.h>
+#include<stdlib.h>
+int z,i;
+struct node{
+	int info;
+	struct node *link;
+};
+void create(int);
+void dis();
+struct node *top,*temp;
+int main(){
+	printf("enter the number of stack you want to create:");
+	scanf("%d",&z);
+	create(z);
+	dis();
+	return 0;
+}
+
+void create(int k){
+	top=(struct node*)malloc(sizeof(struct node));
+	printf("enter the value of stack %d",1);
+	scanf("%d",&top->info);
+	top->link=NULL;
+	for(i=1;i<z;i++){
+	temp=(struct node*)malloc(sizeof(struct node));
+	printf("enter the value of stack %d",i+1);
+	scanf("%d",&temp->info);
+	temp->link=top;
+	top=temp;
+	}
+	
+}
+
+void dis(){
+	struct node *h;
+	h=temp;
+	while(h!=NULL){
+		printf("%d\t",h->info);
+		h=h->link;
+	}
+}
